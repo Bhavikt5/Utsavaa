@@ -35,6 +35,12 @@ import {
   ALL_PRODUCTS_LISTS_REQUEST,
   ALL_PRODUCTS_LISTS_SUCCESS,
   ALL_PRODUCTS_LISTS_FAIL,
+  ALL_BRACELETS_REQUEST,
+  ALL_BRACELETS_SUCCESS,
+  ALL_BRACELETS_FAIL,
+  ALL_MALAS_REQUEST,
+  ALL_MALAS_SUCCESS,
+  ALL_MALAS_FAIL,
 } from "../constants/productConstants";
 
 // Get All Products
@@ -64,7 +70,7 @@ export const getProduct =
     }
   };
 
-// Get All Products --Crystals
+// Crystals Products
 export const getAllCrystalsProducts = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_CRYSTALS_REQUEST });
@@ -78,6 +84,44 @@ export const getAllCrystalsProducts = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: ALL_CRYSTALS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
+// Bracelets Products
+export const getAllBracelets = () => async (dispatch) => {
+  try {
+    dispatch({ type: ALL_BRACELETS_REQUEST });
+
+    const { data } = await axios.get("/api/v1/products/bracelets");
+
+    dispatch({
+      type: ALL_BRACELETS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ALL_BRACELETS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
+// Malas Products
+export const getAllMalas = () => async (dispatch) => {
+  try {
+    dispatch({ type: ALL_MALAS_REQUEST });
+
+    const { data } = await axios.get("/api/v1/products/malas");
+
+    dispatch({
+      type: ALL_MALAS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ALL_MALAS_FAIL,
       payload: error.response.data.message,
     });
   }

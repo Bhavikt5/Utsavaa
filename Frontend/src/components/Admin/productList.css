@@ -37,20 +37,24 @@
 }
 
 .productListTable a:hover {
-  color: tomato;
+  color: #ab46d2;
 }
 
 .productListTable button:hover {
-  color: rgb(236, 30, 30);
+  color: #ab46d2;
 }
 
 .MuiDataGrid-columnHeader {
-  background-color: rgb(135, 75, 191);
-  height: 70px;
+  background-color: black;
+}
+
+.css-1xy1myn-MuiDataGrid-root .MuiDataGrid-columnHeader--sortable {
+  background-color: #ab46d2;
 }
 
 .MuiDataGrid-columnHeader div {
   color: rgb(255, 255, 255);
+  font-size: larger;
 }
 
 @media screen and (max-width: 600px) {

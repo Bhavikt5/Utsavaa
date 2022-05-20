@@ -34,22 +34,10 @@
   transform: scale(1.05);
 }
 
-/* .profileContainer > div:first-child > a {
-  border: none;
-  background-color: tomato;
-  font: 400 1vmax "Roboto";
-  color: white;
+.profileContainer > div:first-child > a {
+  margin-top: 20px;
   text-decoration: none;
-  padding: 0.5vmax;
-  width: 30%;
-  margin: 4vmax;
-  text-align: center;
-  transition: all 0.5s;
-} */
-
-/* .profileContainer > div:first-child > a:hover {
-  background-color: rgb(204, 78, 56);
-} */
+}
 
 .profileContainer > div:last-child {
   justify-content: space-evenly;
@@ -65,7 +53,7 @@
 
 .profileContainer > div:last-child > div > p {
   color: rgba(0, 0, 0, 0.418);
-  font: 400 1vmax cursive;
+  font: 400 1.5rem "Roboto";
   margin: 0.2vmax;
 }
 

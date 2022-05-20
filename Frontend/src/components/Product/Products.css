@@ -62,7 +62,7 @@
 }
 
 .pageLinkActive {
-  color: white;
+  color: black;
 }
 
 .section {
@@ -84,21 +84,29 @@
   padding: 0%;
 }
 
+.categoryBox > li {
+  font-size: 14px;
+}
+
 .category-link {
   list-style: none;
   color: rgba(0, 0, 0, 0.61);
   font: 400 0.8vmax "Roboto";
   margin: 0.4vmax;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 .category-link:hover {
+  transform: translateX(3px);
   color: tomato;
 }
 
 .filterBox > fieldset {
   width: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+.pagination > li {
+  padding: 0;
 }
 
 @media screen and (max-width: 600px) {

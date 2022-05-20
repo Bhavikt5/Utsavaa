@@ -5,7 +5,7 @@ import { clearErrors, getProduct } from "../../actions/productAction";
 import Loader from "../Layout/Loader/Loader";
 import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
-import { Slider, Typography, Rating } from "@mui/material";
+import { Slider, Rating } from "@mui/material";
 import MetaData from "../Layout/MetaData";
 import { useParams } from "react-router-dom";
 
@@ -68,7 +68,7 @@ const Products = () => {
           <div className="section">
             <div className="filter">
               <div className="filterBox">
-                <Typography>Price</Typography>
+                <h5>Price</h5>
                 <Slider
                   className="price"
                   value={price}
@@ -79,7 +79,7 @@ const Products = () => {
                   max={5000}
                 />
 
-                <Typography>Categories</Typography>
+                <h5>Categories</h5>
                 <ul className="categoryBox">
                   {categories.map((category) => (
                     <li
@@ -93,7 +93,7 @@ const Products = () => {
                 </ul>
 
                 <fieldset>
-                  <Typography component="legend">Ratings Above</Typography>
+                  <h5 component="legend">Ratings Above</h5>
 
                   <Rating
                     name="simple-controlled"

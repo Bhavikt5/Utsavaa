@@ -11,6 +11,8 @@ const {
   deleteReview,
   getAllProductsByCategory,
   getAllProductsHome,
+  getAllBracelets,
+  getAllMalas,
 } = require("../controllers/productController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
@@ -22,6 +24,8 @@ router.route("/products").get(getAllProducts); // Get All product details
 router.route("/product/:id").get(getProductDetails); // Get Single Product details
 router.route("/products/crystals").get(getAllProductsByCategory);
 router.route("/products/lists").get(getAllProductsHome);
+router.route("/products/bracelets").get(getAllBracelets);
+router.route("/products/malas").get(getAllMalas);
 
 //Admin route
 router.route("/admin/product/new").post(createProduct);

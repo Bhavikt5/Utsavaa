@@ -49,7 +49,7 @@ const Dashboard = () => {
         label: "TOTAL AMOUNT",
         backgroundColor: ["tomato"],
         hoverBackgroundColor: ["rgb(197, 72, 49)"],
-        data: [0, 2000],
+        data: [0, totalAmount],
       },
     ],
   };
@@ -81,11 +81,10 @@ const Dashboard = () => {
           </div>
           <div className="dashboardSummaryBox2">
             <Link to="/admin/products">
-              <p>Product</p>
+              <p>Products</p>
               <p>{products && products.length}</p>
             </Link>
             <Link to="/admin/orders">
-              <p>Product</p>
               <p>Orders</p>
               <p>{orders && orders.length}</p>
             </Link>

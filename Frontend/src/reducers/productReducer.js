@@ -38,6 +38,12 @@ import {
   ALL_PRODUCTS_LISTS_FAIL,
   ALL_PRODUCTS_LISTS_SUCCESS,
   ALL_PRODUCTS_LISTS_REQUEST,
+  ALL_BRACELETS_REQUEST,
+  ALL_BRACELETS_SUCCESS,
+  ALL_BRACELETS_FAIL,
+  ALL_MALAS_REQUEST,
+  ALL_MALAS_SUCCESS,
+  ALL_MALAS_FAIL,
 } from "../constants/productConstants";
 
 export const productsReducer = (state = { products: [] }, action) => {
@@ -132,6 +138,69 @@ export const productsByCategoryReducer = (state = { products: [] }, action) => {
       };
 
     case ALL_CRYSTALS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export const productsBraceletsReducer = (state = { products: [] }, action) => {
+  switch (action.type) {
+    case ALL_BRACELETS_REQUEST:
+      return {
+        loading: true,
+        products: [],
+      };
+
+    case ALL_BRACELETS_SUCCESS:
+      return {
+        loading: false,
+        productBracelets: action.payload.productBracelets,
+        productsCount: action.payload.productsCount,
+      };
+
+    case ALL_BRACELETS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+export const productMalasReducer = (state = { products: [] }, action) => {
+  switch (action.type) {
+    case ALL_MALAS_REQUEST:
+      return {
+        loading: true,
+        products: [],
+      };
+
+    case ALL_MALAS_SUCCESS:
+      return {
+        loading: false,
+        productMalas: action.payload.productMalas,
+        productsCount: action.payload.productsCount,
+      };
+
+    case ALL_MALAS_FAIL:
       return {
         loading: false,
         error: action.payload,

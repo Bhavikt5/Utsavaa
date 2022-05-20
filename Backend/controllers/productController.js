@@ -180,7 +180,7 @@ exports.getAllProductsHome = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-// Get All Products -- Crystals
+// Crystals List
 exports.getAllProductsByCategory = catchAsyncErrors(async (req, res, next) => {
   // Number of result to view Per Page
 
@@ -198,6 +198,48 @@ exports.getAllProductsByCategory = catchAsyncErrors(async (req, res, next) => {
     success: true,
     productsCount,
     productCrystals,
+  });
+});
+
+// Bracelets List
+exports.getAllBracelets = catchAsyncErrors(async (req, res, next) => {
+  // Number of result to view Per Page
+
+  const productsCount = await Product.countDocuments({ category: "Bracelets" }); // .countDocuments function will count number of products
+
+  const apiFeature = new ApiFeatures(
+    Product.find({ category: "Bracelets" }),
+    req.query
+  );
+
+  let productBracelets = await apiFeature.query;
+
+  res.status(200).json({
+    // 200 - OK
+    success: true,
+    productsCount,
+    productBracelets,
+  });
+});
+
+// Malas List
+exports.getAllMalas = catchAsyncErrors(async (req, res, next) => {
+  // Number of result to view Per Page
+
+  const productsCount = await Product.countDocuments({ category: "Malas" }); // .countDocuments function will count number of products
+
+  const apiFeature = new ApiFeatures(
+    Product.find({ category: "Malas" }),
+    req.query
+  );
+
+  let productMalas = await apiFeature.query;
+
+  res.status(200).json({
+    // 200 - OK
+    success: true,
+    productsCount,
+    productMalas,
   });
 });
 

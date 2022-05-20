@@ -40,6 +40,7 @@ import ProcessOrder from "./components/Admin/ProcessOrder";
 import ProductReviews from "./components/Admin/ProductReviews";
 import Crystals from "./components/Categories/Crystals";
 import Swiper from "./components/Layout/examples/Swiper";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -204,6 +205,7 @@ function App() {
 
         <Route exact path="/about-us" element={<About />}></Route>
         <Route exact path="/therapy-classes" element={<Therapy />}></Route>
+        <Route exact path="/contact-us" element={<ContactUs />}></Route>
         <Route exact path="/carousel" element={<Carousel />}></Route>
         <Route exact path="/swiper" element={<Swiper />}></Route>
         <Route
