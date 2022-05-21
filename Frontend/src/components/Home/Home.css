@@ -1,9 +1,6 @@
 .product {
   background-color: white;
-  margin: 20px;
-  -webkit-box-shadow: 2px 3px 26px -3px rgba(171, 101, 171, 1);
-  -moz-box-shadow: 2px 3px 26px -3px rgba(171, 101, 171, 1);
-  box-shadow: 2px 3px 26px -3px rgba(171, 101, 171, 1);
+  margin: 10px;
   border-radius: 10px;
 }
 
@@ -32,7 +29,6 @@
 
 .container {
   display: flex;
-  margin: 2vmax auto;
   width: 80vw;
   flex-wrap: wrap;
   justify-content: center;

@@ -8,7 +8,7 @@ const ContactUs = () => {
         <div className="mainContact_1">
           <div>
             <h2>
-              <i class="fa-solid fa-phone"></i> Contact Info
+              <i className="fa-solid fa-phone"></i> Contact Info
             </h2>
             <div className="contactContent">
               <p>+91 999 999 9999</p>
@@ -18,7 +18,7 @@ const ContactUs = () => {
 
           <div>
             <h2>
-              <i class="fa-solid fa-phone"></i> Email
+              <i class="fa-regular fa-envelope"></i> Email
             </h2>
             <div className="contactContent">
               <p>test123@123.com</p>
@@ -50,27 +50,28 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="mainContact_2">
-          <form action="">
-            <h1>GET IN TOUCH WITH US</h1>
-            <p>
-              Give us a call, send us an email to have a chat, we are always
-              here to help out in whatever way we can.
-            </p>
 
-            <input type="text" placeholder="name" class="box" name="name" />
-            <input type="email" placeholder="email" class="box" name="email" />
-            <input type="number" placeholder="phone" class="box" name="phone" />
-            <textarea
-              name="message"
-              placeholder="message"
-              class="box"
-              cols="30"
-              rows="10"
-            ></textarea>
-            <input type="submit" value="send message" class="btn" />
-          </form>
-        </div>
+        <form action="" className="mainContact_2">
+          <h1>GET IN TOUCH WITH US</h1>
+          <p>
+            Give us a call, send us an email to have a chat, we are always here
+            to help out in whatever way we can.
+          </p>
+
+          <input type="text" placeholder="name" class="box" name="name" />
+          <input type="email" placeholder="email" class="box" name="email" />
+          <input type="number" placeholder="phone" class="box" name="phone" />
+          <textarea
+            name="message"
+            placeholder="message"
+            class="box"
+            cols="15"
+            rows="6"
+          ></textarea>
+          <button type="submit" class="btn">
+            Send Message
+          </button>
+        </form>
       </div>
     </Fragment>
   );

@@ -22,11 +22,13 @@ const product = require("./routes/productRoutes");
 const user = require("./routes/userRoutes");
 const order = require("./routes/orderRoutes");
 const payment = require("./routes/paymentRoute");
+const newsletter = require("./routes/newsletterRoutes");
 
 app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
+app.use("/api/v1", newsletter);
 
 app.use(express.static(path.join(__dirname, "../Frontend/build")));
 

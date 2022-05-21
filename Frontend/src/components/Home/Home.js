@@ -13,6 +13,7 @@ import {
   getAllMalas,
 } from "../../actions/productAction";
 import CategoriesCarousel from "./CategoriesCarousel";
+import Newsletter from "../Newsletter/Newsletter";
 
 // image url -  http://i.ibb.co/DRST11n/1.webp
 
@@ -97,6 +98,7 @@ const Home = () => {
                 ))}
             </div>
           </div>
+          <Newsletter />
         </Fragment>
       )}
     </Fragment>

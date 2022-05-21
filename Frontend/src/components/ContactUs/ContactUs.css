@@ -1,10 +1,10 @@
 #mainContact {
   padding: 100px;
   display: flex;
-}
-
-.mainContact_1 {
-  width: 40%;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  margin: 20px;
 }
 
 .mainContact_1 > div > h2 {
@@ -16,4 +16,41 @@
 .contactContent > p {
   margin-left: 40px;
   margin-bottom: 0;
+}
+
+.mainContact_2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.mainContact_2 > input,
+textarea {
+  margin-bottom: 13px;
+  padding: 5px 10px;
+  text-transform: capitalize;
+  background-color: rgb(228, 216, 232);
+  border: none;
+  border-radius: 5px;
+}
+
+.mainContact_2 > .btn {
+  width: 200px;
+  margin: auto;
+}
+@media (max-width: 400px) {
+  #mainContact {
+    padding: 20px;
+  }
+
+  .mainContact_1,
+  .mainContact_2 {
+    width: auto;
+    margin-bottom: 50px;
+  }
+
+  .mainContact_2 {
+    padding: 10px;
+    margin: auto;
+  }
 }

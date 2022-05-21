@@ -85,3 +85,10 @@
 .btn:hover {
   background: #888888;
 }
+
+@media (max-width: 400px) {
+  .img a img {
+    width: 130px;
+    margin-left: 40px;
+  }
+}
