@@ -1,9 +1,9 @@
 const express = require("express");
-const errorMiddleware = require("./middleware/error");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileupload = require("express-fileupload");
 const path = require("path");
+const errorMiddleware = require("./middleware/error");
 
 const app = express();
 

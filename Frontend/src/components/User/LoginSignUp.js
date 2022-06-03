@@ -171,7 +171,7 @@ const LoginSignUp = () => {
                   />
                 </div>
                 <div id="registerImage">
-                  <img src={avatarPreview} alt="Avatar Preview" />
+                  <i className="fa-solid fa-circle-user"></i>
                   <input
                     type="file"
                     name="avatar"

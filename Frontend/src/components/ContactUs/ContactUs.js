@@ -18,7 +18,7 @@ const ContactUs = () => {
 
           <div>
             <h2>
-              <i class="fa-regular fa-envelope"></i> Email
+              <i className="fa-regular fa-envelope"></i> Email
             </h2>
             <div className="contactContent">
               <p>test123@123.com</p>
@@ -58,17 +58,27 @@ const ContactUs = () => {
             to help out in whatever way we can.
           </p>
 
-          <input type="text" placeholder="name" class="box" name="name" />
-          <input type="email" placeholder="email" class="box" name="email" />
-          <input type="number" placeholder="phone" class="box" name="phone" />
+          <input type="text" placeholder="name" className="box" name="name" />
+          <input
+            type="email"
+            placeholder="email"
+            className="box"
+            name="email"
+          />
+          <input
+            type="number"
+            placeholder="phone"
+            className="box"
+            name="phone"
+          />
           <textarea
             name="message"
             placeholder="message"
-            class="box"
+            className="box"
             cols="15"
             rows="6"
           ></textarea>
-          <button type="submit" class="btn">
+          <button type="submit" className="btn">
             Send Message
           </button>
         </form>

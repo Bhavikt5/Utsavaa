@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "./logo.png";
 import "./Header.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../../actions/userAction";
 
 function Header() {
@@ -26,6 +26,19 @@ function Header() {
 
   const { user, isAuthenticated } = useSelector((state) => state.user);
 
+  // Search toggle
+  const history = useNavigate();
+  const [keyword, setKeyword] = useState("");
+
+  const searchSubmitHandler = (e) => {
+    // e.preventDefault(); // When submit Reload will not happen
+    if (keyword.trim()) {
+      history(`/products/${keyword}`);
+    } else {
+      history("/products");
+    }
+  };
+
   return (
     <div>
       <header className="header" id="header">
@@ -35,6 +48,10 @@ function Header() {
             999/-
           </p>
         </div>
+
+        {/* <input type="checkbox" id="showForm" />
+        <label for="showForm" className="search_item"></label>
+        <LoginSignUp /> */}
 
         <div className="navbar">
           <button className="toggle" onClick={() => setMobile(!Mobile)}>
@@ -79,10 +96,28 @@ function Header() {
           </div>
 
           <div className="right_nav">
-            <Link to="/search" className="cartBtn">
+            <input type="checkbox" id="showSearch" />
+            <label for="showSearch" className="search_item">
               <i className="fa-solid fa-magnifying-glass"></i>
-            </Link>
+            </label>
+
+            <div className="searchBoxMain">
+              <form className="searchBox1" onSubmit={searchSubmitHandler}>
+                <input
+                  type="text"
+                  placeholder="Search a Product ..."
+                  onChange={(e) => setKeyword(e.target.value)}
+                />
+
+                <button className="btn">Search</button>
+              </form>
+            </div>
             {/* <div className="signInBtn"> */}
+
+            {/* <input type="checkbox" id="showForm" />
+            <label for="showForm" className="search_item"></label>
+            <LoginSignUp /> */}
+
             <Link to="/login" className="signInBtn">
               {isAuthenticated ? (
                 <img
@@ -128,6 +163,7 @@ function Header() {
                 )}
               </span>
             </Link>
+
             {/* </div> */}
             <Link to="/cart" className="cartBtn">
               <i className="fa-solid fa-cart-shopping"></i>

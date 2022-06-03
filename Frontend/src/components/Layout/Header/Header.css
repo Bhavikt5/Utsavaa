@@ -156,6 +156,46 @@
   border-radius: 30%;
 }
 
+/* Search  */
+
+.searchBoxMain {
+  position: absolute;
+  top: 90px;
+  z-index: 9999;
+  left: 40%;
+  background-color: #bbbaba;
+  padding: 0 10px;
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.1s ease;
+}
+
+.searchBoxMain > .searchBox1 > input {
+  width: 300px;
+  padding: 6px 12px;
+  border: none;
+  outline: none;
+  font-family: "Roboto";
+  border-radius: 5px;
+}
+
+#showSearch {
+  display: none;
+}
+
+#showSearch:checked ~ .searchBoxMain {
+  max-height: 100%;
+}
+
+/* .LoginSignUpContainer {
+  height: 0;
+}
+
+#showForm:checked ~ .LoginSignUpContainer {
+  min-height: 70vh;
+} */
+
 @media (max-width: 1083px) {
   .header .navbar {
     padding: 20px;
@@ -270,4 +310,27 @@
     height: 60px;
     line-height: 60px;
   }
+
+  /* search  */
+  .searchBoxMain {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+    background-color: #bbbaba;
+    padding: 0 10px;
+    border-radius: 5px;
+  }
+
+  .searchBoxMain > .searchBox1 > input {
+    width: 200px;
+    padding: 6px 12px;
+    border: none;
+    outline: none;
+    font-family: "Roboto";
+  }
+
+  /* form  */
+  /* #showForm:checked ~ .LoginSignUpContainer {
+    min-height: 100vh;
+  } */
 }

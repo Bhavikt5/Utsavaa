@@ -1,22 +1,23 @@
 .LoginSignUpContainer {
   width: 100vw;
   height: 100vh;
-  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(231, 231, 231);
+  background-color: wheat;
 }
 
 .LoginSignUpBox {
   background-color: white;
   width: 25vw;
-  height: 70vh;
+  height: 60vh;
   box-sizing: border-box;
   overflow: hidden;
+  box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
 }
 .login_signUp_toggle {
   display: flex;
+  padding-top: 20px;
   height: 3vmax;
 }
 .login_signUp_toggle > p {
@@ -70,6 +71,7 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
+  margin: 5px;
   font: 300 0.9vmax cursive;
   outline: none;
 }
@@ -159,10 +161,11 @@
 @media screen and (max-width: 600px) {
   .LoginSignUpContainer {
     background-color: white;
+    top: 70px;
   }
   .LoginSignUpBox {
-    width: 100vw;
-    height: 95vh;
+    width: 95vw;
+    height: 90vh;
   }
   .login_signUp_toggle {
     height: 5vmax;
@@ -185,6 +188,12 @@
   .loginForm > div > svg,
   .signUpForm > div > svg {
     font-size: 2.8vmax;
+  }
+
+  .loginForm > div > i,
+  .signUpForm > div > i {
+    font-size: 1rem;
+    margin-left: 5px;
   }
 
   .loginForm > a {

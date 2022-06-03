@@ -75,6 +75,7 @@ export const register = (userData) => async (dispatch) => {
   }
 };
 
+//Load User
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });
@@ -178,7 +179,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
   }
 };
 
-// get  User Details
+// Get  User Details
 export const getUserDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
@@ -190,7 +191,7 @@ export const getUserDetails = (id) => async (dispatch) => {
   }
 };
 
-// get All Users
+// Get All Users
 export const getAllUsers = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_USERS_REQUEST });
