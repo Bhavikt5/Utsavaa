@@ -51,15 +51,14 @@ function App() {
 
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/v1/stripeapikey");
-
     setStripeApiKey(data.stripeApiKey);
   }
 
   useEffect(() => {
     store.dispatch(loadUser());
-
     getStripeApiKey();
   }, []);
+
   return (
     <Router>
       <Header />

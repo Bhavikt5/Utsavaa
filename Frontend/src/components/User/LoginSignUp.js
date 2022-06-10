@@ -107,6 +107,8 @@ const LoginSignUp = () => {
                 </div>
                 <button ref={switcherTab}></button>
               </div>
+
+              {/* Login  */}
               <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
                 <div className="loginEmail">
                   <i className="fa-solid fa-envelope"></i>
@@ -131,6 +133,8 @@ const LoginSignUp = () => {
                 <Link to="/password/forgot">Forget Password ?</Link>
                 <input type="submit" value="Login" className="Btn" />
               </form>
+
+              {/* Sign Up / Register */}
               <form
                 className="signUpForm"
                 ref={registerTab}

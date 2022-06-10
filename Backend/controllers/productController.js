@@ -103,7 +103,6 @@ exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     // 200 - OK
     success: true,
-
     products,
   });
 });
