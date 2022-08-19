@@ -41,6 +41,7 @@ import ProductReviews from "./components/Admin/ProductReviews";
 import Crystals from "./components/Categories/Crystals";
 import Swiper from "./components/Layout/examples/Swiper";
 import ContactUs from "./components/ContactUs/ContactUs";
+import ScrollToTop from "./components/Layout/ScrollToTop";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -61,6 +62,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Header />
 
       <Routes>
