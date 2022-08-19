@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import "./Footer.css";
+import { categories1, categories2, quickLinks } from "./footerlinksApi";
 import logo from "./logo.png";
 
 const Footer = () => {
@@ -19,9 +20,7 @@ const Footer = () => {
               explicabo mollitia blanditiis iste illo ex.
             </p>
             <div className="share">
-              <a href="/" className="btn fab fa-facebook-f">
-                <i></i>
-              </a>
+              <a href="/" className="btn fab fa-facebook-f"></a>
               <a href="/" className="btn fab fa-twitter">
                 <i></i>
               </a>
@@ -34,46 +33,40 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* <div className="box">
-            <h3>our location</h3>
-            <div className="links">
-              <a href="/">India</a>
-              <a href="/">Dubai</a>
-            </div>
-          </div> */}
-
           <div className="box">
             <h3 className="categories">Categories</h3>
             <div className="link">
               <div className="links">
-                <a href="/">shop by intention</a>
-                <a href="/">crystals</a>
-                <a href="/">bracelets</a>
-                <a href="/">cyrstal kit</a>
-                <a href="/">malas</a>
-                <a href="/">soap</a>
-                <a href="/">eco friendly candles</a>
+                {categories1.map((i, index) => {
+                  return (
+                    <a href={i.link} key={index}>
+                      {i.name}
+                    </a>
+                  );
+                })}
               </div>
               <div className="links">
-                <a href="/">anklet</a>
-                <a href="/">pocket crystal</a>
-                <a href="/">crystal pendant</a>
-                <a href="/">books</a>
-                <a href="/">gift hampers</a>
-                <a href="/">cleansing</a>
-                <a href="/">himalayan salt products</a>
+                {categories2.map((i, index) => {
+                  return (
+                    <a href={i.link} key={index}>
+                      {i.name}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
-          {/* "shop by intention","crystals","bracelets","cyrstal kit","malas","soap","eco friendly candles","anklet","pocket crystal","crystal pendant","books","gift hampers","cleansing","himalayan salt products" */}
+
           <div className="box ">
             <h3>Quick Links</h3>
             <div className="links">
-              <a href="/">home</a>
-              <a href="/">therapy classes</a>
-              <a href="/">about us</a>
-              <a href="/">FAQ</a>
-              <a href="/">contact us</a>
+              {quickLinks.map((i, index) => {
+                return (
+                  <a href={i.link} key={index}>
+                    {i.name}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
