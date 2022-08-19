@@ -35,6 +35,7 @@ const Home = () => {
     dispatch(getAllBracelets());
     dispatch(getAllMalas());
   }, [dispatch, error]);
+  console.log(productMalas);
   return (
     <Fragment>
       {loading ? (

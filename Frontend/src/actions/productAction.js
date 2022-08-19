@@ -1,54 +1,13 @@
 import axios from "axios";
 
-import {
-  ALL_PRODUCT_FAIL,
-  ALL_PRODUCT_REQUEST,
-  ALL_PRODUCT_SUCCESS,
-  ADMIN_PRODUCT_REQUEST,
-  ADMIN_PRODUCT_SUCCESS,
-  ADMIN_PRODUCT_FAIL,
-  NEW_PRODUCT_REQUEST,
-  NEW_PRODUCT_SUCCESS,
-  NEW_PRODUCT_FAIL,
-  UPDATE_PRODUCT_REQUEST,
-  UPDATE_PRODUCT_SUCCESS,
-  UPDATE_PRODUCT_FAIL,
-  DELETE_PRODUCT_REQUEST,
-  DELETE_PRODUCT_SUCCESS,
-  DELETE_PRODUCT_FAIL,
-  PRODUCT_DETAILS_REQUEST,
-  PRODUCT_DETAILS_FAIL,
-  PRODUCT_DETAILS_SUCCESS,
-  NEW_REVIEW_REQUEST,
-  NEW_REVIEW_SUCCESS,
-  NEW_REVIEW_FAIL,
-  ALL_REVIEW_REQUEST,
-  ALL_REVIEW_SUCCESS,
-  ALL_REVIEW_FAIL,
-  DELETE_REVIEW_REQUEST,
-  DELETE_REVIEW_SUCCESS,
-  DELETE_REVIEW_FAIL,
-  CLEAR_ERRORS,
-  ALL_CRYSTALS_REQUEST,
-  ALL_CRYSTALS_FAIL,
-  ALL_CRYSTALS_SUCCESS,
-  ALL_PRODUCTS_LISTS_REQUEST,
-  ALL_PRODUCTS_LISTS_SUCCESS,
-  ALL_PRODUCTS_LISTS_FAIL,
-  ALL_BRACELETS_REQUEST,
-  ALL_BRACELETS_SUCCESS,
-  ALL_BRACELETS_FAIL,
-  ALL_MALAS_REQUEST,
-  ALL_MALAS_SUCCESS,
-  ALL_MALAS_FAIL,
-} from "../constants/productConstants";
+import { productConstant } from "../constants/productConstants";
 
 // Get All Products
 export const getProduct =
   (keyword = "", currentPage = 1, price = [0, 5000], category, ratings = 0) =>
   async (dispatch) => {
     try {
-      dispatch({ type: ALL_PRODUCT_REQUEST });
+      dispatch({ type: productConstant.ALL_PRODUCT_REQUEST });
 
       let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
 
@@ -59,12 +18,12 @@ export const getProduct =
       const { data } = await axios.get(link);
 
       dispatch({
-        type: ALL_PRODUCT_SUCCESS,
+        type: productConstant.ALL_PRODUCT_SUCCESS,
         payload: data,
       });
     } catch (error) {
       dispatch({
-        type: ALL_PRODUCT_FAIL,
+        type: productConstant.ALL_PRODUCT_FAIL,
         payload: error.response.data.message,
       });
     }
@@ -73,17 +32,17 @@ export const getProduct =
 // Crystals Products
 export const getAllCrystalsProducts = () => async (dispatch) => {
   try {
-    dispatch({ type: ALL_CRYSTALS_REQUEST });
+    dispatch({ type: productConstant.ALL_CRYSTALS_REQUEST });
 
     const { data } = await axios.get("/api/v1/products/crystals");
 
     dispatch({
-      type: ALL_CRYSTALS_SUCCESS,
+      type: productConstant.ALL_CRYSTALS_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: ALL_CRYSTALS_FAIL,
+      type: productConstant.ALL_CRYSTALS_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -92,17 +51,17 @@ export const getAllCrystalsProducts = () => async (dispatch) => {
 // Bracelets Products
 export const getAllBracelets = () => async (dispatch) => {
   try {
-    dispatch({ type: ALL_BRACELETS_REQUEST });
+    dispatch({ type: productConstant.ALL_BRACELETS_REQUEST });
 
     const { data } = await axios.get("/api/v1/products/bracelets");
 
     dispatch({
-      type: ALL_BRACELETS_SUCCESS,
+      type: productConstant.ALL_BRACELETS_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: ALL_BRACELETS_FAIL,
+      type: productConstant.ALL_BRACELETS_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -111,17 +70,17 @@ export const getAllBracelets = () => async (dispatch) => {
 // Malas Products
 export const getAllMalas = () => async (dispatch) => {
   try {
-    dispatch({ type: ALL_MALAS_REQUEST });
+    dispatch({ type: productConstant.ALL_MALAS_REQUEST });
 
     const { data } = await axios.get("/api/v1/products/malas");
 
     dispatch({
-      type: ALL_MALAS_SUCCESS,
+      type: productConstant.ALL_MALAS_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: ALL_MALAS_FAIL,
+      type: productConstant.ALL_MALAS_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -130,17 +89,17 @@ export const getAllMalas = () => async (dispatch) => {
 // Get All Products -- HOME
 export const getAllProductsList = () => async (dispatch) => {
   try {
-    dispatch({ type: ALL_PRODUCTS_LISTS_REQUEST });
+    dispatch({ type: productConstant.ALL_PRODUCTS_LISTS_REQUEST });
 
     const { data } = await axios.get("/api/v1/products/lists");
 
     dispatch({
-      type: ALL_PRODUCTS_LISTS_SUCCESS,
+      type: productConstant.ALL_PRODUCTS_LISTS_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: ALL_PRODUCTS_LISTS_FAIL,
+      type: productConstant.ALL_PRODUCTS_LISTS_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -149,17 +108,17 @@ export const getAllProductsList = () => async (dispatch) => {
 // Get All Products For Admin
 export const getAdminProduct = () => async (dispatch) => {
   try {
-    dispatch({ type: ADMIN_PRODUCT_REQUEST });
+    dispatch({ type: productConstant.ADMIN_PRODUCT_REQUEST });
 
     const { data } = await axios.get("/api/v1/admin/products");
 
     dispatch({
-      type: ADMIN_PRODUCT_SUCCESS,
+      type: productConstant.ADMIN_PRODUCT_SUCCESS,
       payload: data.products,
     });
   } catch (error) {
     dispatch({
-      type: ADMIN_PRODUCT_FAIL,
+      type: productConstant.ADMIN_PRODUCT_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -168,7 +127,7 @@ export const getAdminProduct = () => async (dispatch) => {
 // Create Product
 export const createProduct = (productData) => async (dispatch) => {
   try {
-    dispatch({ type: NEW_PRODUCT_REQUEST });
+    dispatch({ type: productConstant.NEW_PRODUCT_REQUEST });
 
     const config = {
       headers: { "Content-Type": "application/json" },
@@ -181,12 +140,12 @@ export const createProduct = (productData) => async (dispatch) => {
     );
 
     dispatch({
-      type: NEW_PRODUCT_SUCCESS,
+      type: productConstant.NEW_PRODUCT_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: NEW_PRODUCT_FAIL,
+      type: productConstant.NEW_PRODUCT_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -195,7 +154,7 @@ export const createProduct = (productData) => async (dispatch) => {
 // Update Product
 export const updateProduct = (id, productData) => async (dispatch) => {
   try {
-    dispatch({ type: UPDATE_PRODUCT_REQUEST });
+    dispatch({ type: productConstant.UPDATE_PRODUCT_REQUEST });
 
     const config = {
       headers: { "Content-Type": "application/json" },
@@ -208,12 +167,12 @@ export const updateProduct = (id, productData) => async (dispatch) => {
     );
 
     dispatch({
-      type: UPDATE_PRODUCT_SUCCESS,
+      type: productConstant.UPDATE_PRODUCT_SUCCESS,
       payload: data.success,
     });
   } catch (error) {
     dispatch({
-      type: UPDATE_PRODUCT_FAIL,
+      type: productConstant.UPDATE_PRODUCT_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -222,17 +181,17 @@ export const updateProduct = (id, productData) => async (dispatch) => {
 // Delete Product
 export const deleteProduct = (id) => async (dispatch) => {
   try {
-    dispatch({ type: DELETE_PRODUCT_REQUEST });
+    dispatch({ type: productConstant.DELETE_PRODUCT_REQUEST });
 
     const { data } = await axios.delete(`/api/v1/admin/product/${id}`);
 
     dispatch({
-      type: DELETE_PRODUCT_SUCCESS,
+      type: productConstant.DELETE_PRODUCT_SUCCESS,
       payload: data.success,
     });
   } catch (error) {
     dispatch({
-      type: DELETE_PRODUCT_FAIL,
+      type: productConstant.DELETE_PRODUCT_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -241,17 +200,17 @@ export const deleteProduct = (id) => async (dispatch) => {
 // Get Product Details
 export const getProductDetails = (id) => async (dispatch) => {
   try {
-    dispatch({ type: PRODUCT_DETAILS_REQUEST });
+    dispatch({ type: productConstant.PRODUCT_DETAILS_REQUEST });
 
     const { data } = await axios.get(`/api/v1/product/${id}`);
 
     dispatch({
-      type: PRODUCT_DETAILS_SUCCESS,
+      type: productConstant.PRODUCT_DETAILS_SUCCESS,
       payload: data.product,
     });
   } catch (error) {
     dispatch({
-      type: PRODUCT_DETAILS_FAIL,
+      type: productConstant.PRODUCT_DETAILS_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -260,7 +219,7 @@ export const getProductDetails = (id) => async (dispatch) => {
 // NEW REVIEW
 export const newReview = (reviewData) => async (dispatch) => {
   try {
-    dispatch({ type: NEW_REVIEW_REQUEST });
+    dispatch({ type: productConstant.NEW_REVIEW_REQUEST });
 
     const config = {
       headers: { "Content-Type": "application/json" },
@@ -269,12 +228,12 @@ export const newReview = (reviewData) => async (dispatch) => {
     const { data } = await axios.put(`/api/v1/review`, reviewData, config);
 
     dispatch({
-      type: NEW_REVIEW_SUCCESS,
+      type: productConstant.NEW_REVIEW_SUCCESS,
       payload: data.success,
     });
   } catch (error) {
     dispatch({
-      type: NEW_REVIEW_FAIL,
+      type: productConstant.NEW_REVIEW_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -283,17 +242,17 @@ export const newReview = (reviewData) => async (dispatch) => {
 // Get All Reviews of a Product
 export const getAllReviews = (id) => async (dispatch) => {
   try {
-    dispatch({ type: ALL_REVIEW_REQUEST });
+    dispatch({ type: productConstant.ALL_REVIEW_REQUEST });
 
     const { data } = await axios.get(`/api/v1/reviews?id=${id}`);
 
     dispatch({
-      type: ALL_REVIEW_SUCCESS,
+      type: productConstant.ALL_REVIEW_SUCCESS,
       payload: data.reviews,
     });
   } catch (error) {
     dispatch({
-      type: ALL_REVIEW_FAIL,
+      type: productConstant.ALL_REVIEW_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -302,19 +261,19 @@ export const getAllReviews = (id) => async (dispatch) => {
 // Delete Review of a Product
 export const deleteReviews = (reviewId, productId) => async (dispatch) => {
   try {
-    dispatch({ type: DELETE_REVIEW_REQUEST });
+    dispatch({ type: productConstant.DELETE_REVIEW_REQUEST });
 
     const { data } = await axios.delete(
       `/api/v1/reviews?id=${reviewId}&productId=${productId}`
     );
 
     dispatch({
-      type: DELETE_REVIEW_SUCCESS,
+      type: productConstant.DELETE_REVIEW_SUCCESS,
       payload: data.success,
     });
   } catch (error) {
     dispatch({
-      type: DELETE_REVIEW_FAIL,
+      type: productConstant.DELETE_REVIEW_FAIL,
       payload: error.response.data.message,
     });
   }
@@ -322,5 +281,5 @@ export const deleteReviews = (reviewId, productId) => async (dispatch) => {
 
 // Clearing Errors
 export const clearErrors = () => async (dispatch) => {
-  dispatch({ type: CLEAR_ERRORS });
+  dispatch({ type: productConstant.CLEAR_ERRORS });
 };

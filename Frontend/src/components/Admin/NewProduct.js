@@ -10,7 +10,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import SpellcheckIcon from "@mui/icons-material/Spellcheck";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import SideBar from "./Sidebar";
-import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
+import { productConstant } from "../../constants/productConstants";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -52,7 +52,7 @@ const NewProduct = () => {
 
     if (success) {
       history("/admin/dashboard");
-      dispatch({ type: NEW_PRODUCT_RESET });
+      dispatch({ type: productConstant.NEW_PRODUCT_RESET });
     }
   }, [dispatch, error, history, success]);
 

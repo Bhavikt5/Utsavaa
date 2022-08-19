@@ -13,7 +13,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import SpellcheckIcon from "@mui/icons-material/Spellcheck";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import SideBar from "./Sidebar";
-import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
+import { productConstant } from "../../constants/productConstants";
 import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateProduct = () => {
@@ -78,7 +78,7 @@ const UpdateProduct = () => {
 
     if (isUpdated) {
       history("/admin/products");
-      dispatch({ type: UPDATE_PRODUCT_RESET });
+      dispatch({ type: productConstant.UPDATE_PRODUCT_RESET });
     }
   }, [dispatch, error, history, isUpdated, productId, product, updateError]);
 

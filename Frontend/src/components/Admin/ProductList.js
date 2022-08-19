@@ -13,7 +13,7 @@ import MetaData from "../Layout/MetaData";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SideBar from "./Sidebar";
-import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
+import { productConstant } from "../../constants/productConstants";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const ProductList = () => {
 
     if (isDeleted) {
       history("/admin/dashboard");
-      dispatch({ type: DELETE_PRODUCT_RESET });
+      dispatch({ type: productConstant.DELETE_PRODUCT_RESET });
     }
 
     dispatch(getAdminProduct());

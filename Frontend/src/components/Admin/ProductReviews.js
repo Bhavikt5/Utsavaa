@@ -12,7 +12,7 @@ import MetaData from "../Layout/MetaData";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Star from "@mui/icons-material/Star";
 import SideBar from "./Sidebar";
-import { DELETE_REVIEW_RESET } from "../../constants/productConstants";
+import { productConstant } from "../../constants/productConstants";
 import { useNavigate } from "react-router-dom";
 
 const ProductReviews = () => {
@@ -55,7 +55,7 @@ const ProductReviews = () => {
     if (isDeleted) {
       alert("Review Deleted Successfully");
       history("/admin/reviews");
-      dispatch({ type: DELETE_REVIEW_RESET });
+      dispatch({ type: productConstant.DELETE_REVIEW_RESET });
     }
   }, [dispatch, error, deleteError, history, isDeleted, productId]);
 

@@ -20,7 +20,7 @@ import {
 } from "../../actions/productAction";
 import MetaData from "../Layout/MetaData";
 import { addItemsToCart } from "../../actions/cartAction";
-import { NEW_REVIEW_RESET } from "../../constants/productConstants";
+import { productConstant } from "../../constants/productConstants";
 import ReviewCard from "./ReviewCard";
 
 const ProductDetails = () => {
@@ -94,7 +94,7 @@ const ProductDetails = () => {
 
     if (success) {
       alert("Review Submitted Successfully");
-      dispatch({ type: NEW_REVIEW_RESET });
+      dispatch({ type: productConstant.NEW_REVIEW_RESET });
     }
 
     dispatch(getProductDetails(id));
