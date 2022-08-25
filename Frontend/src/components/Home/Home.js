@@ -11,6 +11,7 @@ import {
   getAllBracelets,
   getAllCrystalsProducts,
   getAllMalas,
+  getProduct,
 } from "../../actions/productAction";
 import CategoriesCarousel from "./CategoriesCarousel";
 import Newsletter from "../Newsletter/Newsletter";
@@ -25,7 +26,23 @@ const Home = () => {
   );
   const { productBracelets } = useSelector((state) => state.productsBracelets);
   const { productMalas } = useSelector((state) => state.productMalas);
+  const { products } = useSelector((state) => state.products);
 
+  // const output = products.reduce((arr, curr) => {
+  //   if (arr[curr.name]) {
+  //     arr[curr.name] = ++arr[curr.name];
+  //   } else {
+  //     arr[curr.name] = 1;
+  //   }
+  //   return arr;
+  // }, {});
+
+  // console.log("output", output);
+  console.log("product", products);
+
+  const bracelets = products.filter((i) => i.name === "Bracelets");
+
+  console.log("bracelet", bracelets);
   useEffect(() => {
     if (error) {
       return error(error);
@@ -34,8 +51,9 @@ const Home = () => {
     dispatch(getAllCrystalsProducts());
     dispatch(getAllBracelets());
     dispatch(getAllMalas());
+    dispatch(getProduct());
   }, [dispatch, error]);
-  console.log(productMalas);
+
   return (
     <Fragment>
       {loading ? (
@@ -80,6 +98,21 @@ const Home = () => {
             <div className="container" id="container">
               {productBracelets &&
                 productBracelets.map((product) => (
+                  <ProductCard key={product._id} product={product} />
+                ))}
+            </div>
+          </div>
+
+          <div className="product">
+            <div className="categoryHeading">
+              <h2 className="homeHeading">Products</h2>
+              <Link to="/products/bracelets" className="Btn">
+                View All
+              </Link>
+            </div>
+            <div className="container" id="container">
+              {bracelets &&
+                bracelets.map((product) => (
                   <ProductCard key={product._id} product={product} />
                 ))}
             </div>

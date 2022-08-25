@@ -150,8 +150,8 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
   const productsCount = await Product.countDocuments(); // .countDocuments function will count number of products create by product model or number of products in mongo database
   const apiFeature = new ApiFeatures(Product.find(), req.query)
     .search()
-    .filter()
-    .pagination(resultPerPage);
+    .filter();
+  // .pagination(resultPerPage);
 
   let products = await apiFeature.query; // find() will find all the products in database and json will convert data and show products
 
@@ -159,7 +159,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
     // 200 - OK
     success: true,
     productsCount,
-    resultPerPage,
+    // resultPerPage,
     products,
   });
 });

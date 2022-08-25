@@ -119,15 +119,6 @@ function Header() {
             <LoginSignUp /> */}
 
             <Link to="/login" className="signInBtn">
-              {isAuthenticated ? (
-                <img
-                  className="speedDialIcon"
-                  src={user.avatar.url}
-                  alt="Profile"
-                />
-              ) : (
-                <i className="fa-solid fa-circle-user"></i>
-              )}
               <span>
                 {isAuthenticated ? (
                   <ul className="signInBtnUl">
@@ -162,6 +153,15 @@ function Header() {
                   "Sign In"
                 )}
               </span>
+              {isAuthenticated ? (
+                <img
+                  className="speedDialIcon"
+                  src={user.avatar.url}
+                  alt="Profile"
+                />
+              ) : (
+                <i className="fa-solid fa-circle-user"></i>
+              )}
             </Link>
 
             {/* </div> */}

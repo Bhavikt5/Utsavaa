@@ -32,6 +32,9 @@ const Products = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 5000]);
+  // const [minPrice, setMinPrice] = useState();
+  // const [maxPrice, setMaxPrice] = useState();
+
   const [category, setCategory] = useState("");
 
   const [ratings, setRatings] = useState(0);
@@ -56,6 +59,15 @@ const Products = () => {
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
   }, [dispatch, keyword, currentPage, price, category, ratings, error]);
 
+  console.log(price);
+
+  // const startPrice = (e, index) => {
+  //   setTimeout(() => {
+  //     // setMinPrice({ min: 244 });
+  //     // setPrice(e.target.value);
+  //   }, 2000);
+  // };
+
   return (
     <Fragment>
       {loading ? (
@@ -78,6 +90,7 @@ const Products = () => {
                   min={0}
                   max={5000}
                 />
+                {/* <input type="text" onChange={(e) => startPrice(e)} /> */}
 
                 <h5>Categories</h5>
                 <ul className="categoryBox">

@@ -3,15 +3,16 @@
 }
 
 .banner {
-  text-align: center;
-  padding: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(141, 68, 173, 1);
-  height: 52px;
+  height: 30px;
 }
 
 .banner p {
   color: aliceblue;
-  font-size: 14px;
+  margin-bottom: 0;
 }
 
 .navbar {
@@ -82,6 +83,8 @@
   font-size: 20px;
   cursor: pointer;
   text-decoration: none;
+  font-size: 15px;
+  padding: 15px 0;
 }
 
 .signInBtn span {
@@ -123,8 +126,7 @@
   position: absolute;
   background-color: white;
   padding: 10px 0;
-  top: 60px;
-  right: 100px;
+  top: 70px;
   z-index: 19;
 }
 
@@ -198,7 +200,7 @@
 
 @media (max-width: 1083px) {
   .header .navbar {
-    padding: 20px;
+    padding: 0 20px;
   }
 
   .navbar .mid-nav li {
@@ -214,9 +216,10 @@
   .banner p {
     font-size: 10px;
   }
+
   .header .navbar {
     justify-content: space-between;
-    height: auto;
+
     padding: 10px;
   }
 
@@ -329,8 +332,8 @@
     font-family: "Roboto";
   }
 
-  /* form  */
-  /* #showForm:checked ~ .LoginSignUpContainer {
+  /* form   */
+  #showForm:checked ~ .LoginSignUpContainer {
     min-height: 100vh;
-  } */
+  }
 }
